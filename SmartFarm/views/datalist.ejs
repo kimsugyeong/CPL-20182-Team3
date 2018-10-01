@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Farm Data</title>
+        <style>
+            table{
+                border: 1px solid;
+                border-collapse: collapse;
+            }
+            
+            th, td{
+                width: 200px;
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Farm Data</h1>
+        <br>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>온도</th>
+                        <th>습도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<rows.length; i++){
+                        var curDate=rows[i].date;
+                        var curTemp=rows[i].temperature;
+                        var curHum=rows[i].humidity; %>
+                    <tr>
+                        <td><%=curDate%></td>
+                        <td><%=curTemp%></td>
+                        <td><%=curHum%></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
