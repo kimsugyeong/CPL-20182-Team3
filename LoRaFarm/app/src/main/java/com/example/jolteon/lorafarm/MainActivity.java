@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -15,9 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.iid.FirebaseInstanceId;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     String serverIP="220.122.182.173";
     String operation="";
-
+    LinearLayout buttonLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         registerApp();
+
+        Button button=(Button)findViewById(R.id.button_t5);
+        buttonLayout=(LinearLayout) findViewById(R.id.button_layout);
+
+        button.setSelected(true);
     }
 
     public void registerApp(){
@@ -108,9 +110,22 @@ public class MainActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(request);
     }
 
+    public void timeButtonClicked(View v) {
+
+        Button button;
+
+        for(int i=0; i<buttonLayout.getChildCount(); i++){
+           buttonLayout.getChildAt(i).setSelected(false);
+        }
+
+        v.setSelected(true);
+    }
+
+    /*
+
     public void mOnClick(View v){
 
-        /*
+
         StringRequest request=new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>(){
                     @Override
@@ -149,8 +164,9 @@ public class MainActivity extends AppCompatActivity {
 
         request.setShouldCache(false);
         Volley.newRequestQueue(this).add(request);
-        */
+
     }
+    */
 
     public String makeUrl(String str){
         return "http://"+serverIP+":3000/"+str;

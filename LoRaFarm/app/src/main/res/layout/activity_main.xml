@@ -5,64 +5,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background4"
+    android:padding="5dp"
     tools:context="com.example.jolteon.lorafarm.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가장 최근에 업데이트된 날짜"
+        android:textSize="20sp"
+        android:textColor="#ff000000"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ff000000"
+        android:textSize="20sp"
+        android:text="날짜 나오지 않으면 서버 IP 확인"
+        android:textStyle="bold"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:textSize="15dp"
-            android:text="http://220.122.182.143:3000/farmdata"
-            android:id="@+id/editText"
-            />
-
-        <Button
+        <com.example.jolteon.lorafarm.CustomTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="요청"
-            android:id="@+id/button"
-            android:onClick="mOnClick"
+            android:text="28"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            app:textStroke="true"
+            app:textStrokeColor="#ff000000"
+            app:textStrokeWidth="7.0"
+            android:id="@+id/temp_text"
+            android:gravity="center"
             />
+
+        <com.example.jolteon.lorafarm.CustomTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="68%"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            app:textStroke="true"
+            app:textStrokeColor="#ff000000"
+            app:textStrokeWidth="7.0"
+            android:id="@+id/hum_text"
+            android:gravity="center"
+            />
+
     </LinearLayout>
 
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="http://220.122.182.143:3000/controlArduino"
-            android:id="@+id/controlEdit"
-            />
-
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffdeeafc"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:background="#8877ff77"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text=""
-            android:id="@+id/textView"
-            android:textSize="25sp"
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_stop"
+            android:background="#00ffffff"
+            android:id="@+id/control_button"
             />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/button_layout"
+            >
 
-    </ScrollView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5초"
+                android:textSize="20sp"
+                android:textColor="@color/selector_text"
+                android:background="@drawable/selector_btn"
+                android:id="@+id/button_t5"
+                android:onClick="timeButtonClicked"
+                android:layout_marginBottom="3dp"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/selector_text"
+                android:background="@drawable/selector_btn"
+                android:textSize="20sp"
+                android:text="10초"
+                android:id="@+id/button_t10"
+                android:onClick="timeButtonClicked"
+                android:layout_marginBottom="3dp"
+
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/selector_text"
+                android:background="@drawable/selector_btn"
+                android:text="15초"
+                android:textSize="20sp"
+                android:id="@+id/button_t15"
+                android:onClick="timeButtonClicked"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
