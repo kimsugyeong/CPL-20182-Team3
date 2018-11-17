@@ -18,7 +18,7 @@ var expressSession = require('express-session');
 // fcm-node
 var FCM = require('fcm-node');
 
-var serverKey = 'AAAArpjExjY:APA91bHEwchQ3b--m6ihKXUnOZuVQ2___zMP3jfeP5ezg2qW14_34JnFUxdaNvi6W_4s0cgMugpqFhtIfRud1HfOLk-c88_LYJJuAVSS5KfobxTBo0uz_QjHclnBhplSkpSKT8m3TMzn';
+var serverKey = 'AAAAkdvIRzw:APA91bF4cnknOty8McdWyv_X1F6DZcgLSKuwuVGZExPT_lqMyk-8dpdys0iT60GGGQTRm3IC_yAo5ACf3mLwYRQr2j42Vl3DGS_b6SFqVqS42ant7a2AxUtD_HFMvgi1fK3dfbMJsFFk';
 
 var farm = require('./routes/farm');
 var database = require('./database/database');
@@ -59,7 +59,6 @@ app.use(expressSession({
 
 var token = require('./ClientToken');
 
-/*
 const SerialPort = require('serialport');
 const Readline = require('parser-readline');
 const sp = new SerialPort('COM3', {
@@ -80,8 +79,8 @@ sp.on('open', function () {
 
         console.log("데이터 읽음 : " + data);
 
-        var strData = data.toString().trim();        
-        var regx=/^[a-zA-Z0-9]*\s[0-9]*\s[0-9]*$/;
+        var strData = data.toString().trim();
+        var regx = /^[a-zA-Z0-9]*\s[0-9]*\s[0-9]*$/;
 
         if (regx.test(strData)) {
             var strArr = strData.split(" ");
@@ -105,7 +104,7 @@ sp.on('open', function () {
 
                 // 데이터를 객체로 만든다.
                 var DBdata = {
-                    boardId:strArr[0],
+                    boardId: strArr[0],
                     date: date,
                     temperature: strArr[1],
                     humidity: strArr[2]
@@ -166,7 +165,7 @@ sp.on('open', function () {
     });
 
 });
-*/
+
 
 
 // 라우터 객체 참조

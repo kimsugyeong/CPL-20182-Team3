@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         request.setShouldCache(false);
         Volley.newRequestQueue(this).add(request);
     }
+
     public void controlButtonClicked(View v){
 
         String url=makeUrl("controlArduino");
