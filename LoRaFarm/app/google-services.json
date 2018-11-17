@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "626457593660",
+    "firebase_url": "https://farm-64cf2.firebaseio.com",
+    "project_id": "farm-64cf2",
+    "storage_bucket": "farm-64cf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626457593660:android:8f81f5f69717a30a",
+        "android_client_info": {
+          "package_name": "com.example.jolteon.lorafarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626457593660-kosdpvgabia54un91beg882okh2pr2h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeeVnSLZnkyXfyN-3vYX_24dROb8UVjiQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
