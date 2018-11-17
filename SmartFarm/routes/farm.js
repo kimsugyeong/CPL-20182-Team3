@@ -86,6 +86,7 @@ var controlArduino = function (req, res) {
     console.log('op : ', paramControl);
 
     
+    /*
     var serialport = req.app.get('serialport');
 
     serialport.write(paramControl, function (err) {
@@ -94,6 +95,7 @@ var controlArduino = function (req, res) {
         }
         console.log('message written');
     });
+    */
 
     res.writeHead('200', {
         'Content-Type': 'application/json;charset=utf8'

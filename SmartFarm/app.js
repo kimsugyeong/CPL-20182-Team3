@@ -59,6 +59,7 @@ app.use(expressSession({
 
 var token = require('./ClientToken');
 
+/*
 const SerialPort = require('serialport');
 const Readline = require('parser-readline');
 const sp = new SerialPort('COM3', {
@@ -165,7 +166,7 @@ sp.on('open', function () {
     });
 
 });
-
+*/
 
 
 // 라우터 객체 참조
