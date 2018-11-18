@@ -27,7 +27,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    String serverIP="220.122.182.173";
+    static String serverIP="121.150.9.182";
     String operation="";
     LinearLayout buttonLayout;
     TextView mostRecent;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        Intent intent=new Intent(getApplicationContext(), Calendar.class);
+                        Intent intent=new Intent(getApplicationContext(), DataHistory.class);
                         startActivity(intent);
                     }
                 }
@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
     }
     */
 
-    public String makeUrl(String str){
+    public static String makeUrl(String str){
         return "http://"+serverIP+":3000/"+str;
     }
 

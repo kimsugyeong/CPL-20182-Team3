@@ -59,7 +59,7 @@ app.use(expressSession({
 
 var token = require('./ClientToken');
 
-
+/*
 const SerialPort = require('serialport');
 const Readline = require('parser-readline');
 const sp = new SerialPort('COM3', {
@@ -167,7 +167,7 @@ sp.on('open', function () {
 
 });
 
-
+*/
 
 // 라우터 객체 참조
 var router = express.Router();
@@ -177,6 +177,7 @@ router.route('/farmdata').get(farm.farmdata);
 router.route('/controlArduino').post(farm.controlArduino);
 router.route('/register').post(farm.register);
 router.route('/getRecentDate').get(farm.getRecentDate);
+router.route('/getDataHistory').post(farm.getDataHistory);
 
 // 라우터 객체 등록
 app.use('/', router);

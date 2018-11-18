@@ -82,11 +82,11 @@ var controlArduino = function (req, res) {
     console.log('Farm 모듈 안에 있는 controlArduino 호출됨.');
 
     var paramControl = req.body.op || req.query.op;
-    
+
     console.log('op : ', paramControl);
 
-    
-    
+
+
     var serialport = req.app.get('serialport');
 
     serialport.write(paramControl, function (err) {
@@ -95,14 +95,14 @@ var controlArduino = function (req, res) {
         }
         console.log('message written');
     });
-    
+
 
     res.writeHead('200', {
         'Content-Type': 'application/json;charset=utf8'
     });
     res.write("{code:'200', 'message':'데이터를 성공적으로 받음'}");
     res.end();
-    
+
 }
 
 var register = function (req, res) {
@@ -126,7 +126,6 @@ var register = function (req, res) {
             if (conn) {
                 conn.release(); // 반드시 해제해줘야 한다.
             }
-            callback(err, null);
             return;
         }
 
@@ -210,6 +209,66 @@ var getRecentDate = function (req, res) {
 
 }
 
+var getDataHistory = function (req, res) {
+
+    var paramYear = req.body.year || req.query.year;
+    var paramMonth = req.body.month || req.query.month;
+    var paramDay=req.body.day||req.query.day;
+
+    console.log('요청 파라미터 : ' + paramYear + ', ' + paramMonth+', '+paramDay);
+
+    /*
+     // database 객체 참조
+    var pool = req.app.get('database').pool;
+
+    pool.getConnection(function (err, conn) {
+        if (err) {
+            if (conn) {
+                conn.release(); // 반드시 해제해줘야 한다.
+            }
+            callback(err, null);
+            return;
+        }
+
+        console.log('데이터베이스 연결 스레드 아이디 : ' + conn.threadId);
+
+        sqlStr = "select * from data order by date desc limit 1"
+
+        // SQL문 실행
+        var exec = conn.query(sqlStr, function (err, rows) {
+            conn.release(); // 반드시 해제해준다.
+            console.log('실행 대상 SQL : ' + exec.sql);
+
+            if (rows) {
+                console.dir(rows);
+
+                res.writeHead('200', {
+                    'Content-Type': 'text/html;charset=utf8'
+                });
+
+                res.write(JSON.stringify(rows));
+                res.end();
+            } else {
+                res.writeHead('200', {
+                    'Content-Type': 'text/html;charset=utf8'
+                });
+                res.write('<h2>데이터 조회 실패</h2>');
+                res.end();
+            }
+
+        });
+
+    });
+    */
+
+    res.writeHead('200', {
+        'Content-Type': 'application/json;charset=utf8'
+    });
+    res.write("{code:'200', 'message':'데이터를 성공적으로 받음'}");
+    res.end();
+
+}
+
 var getData = function (pool, callback) {
     // 커넥션 풀에서 연결 객체를 가져옵니다.
     pool.getConnection(function (err, conn) {
@@ -245,4 +304,5 @@ module.exports.index = index;
 module.exports.farmdata = farmdata;
 module.exports.controlArduino = controlArduino;
 module.exports.register = register;
-module.exports.getRecentDate=getRecentDate;
+module.exports.getRecentDate = getRecentDate;
+module.exports.getDataHistory = getDataHistory;

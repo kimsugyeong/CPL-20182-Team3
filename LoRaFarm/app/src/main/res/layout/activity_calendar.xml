@@ -5,23 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Calendar">
+    android:padding="10dp"
+    tools:context=".DataHistory">
 
+    <!--
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="wrap_content"
         app:mcv_selectionColor="#00F"
         app:mcv_showOtherDates="all" />
+!-->
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="날짜 선택"
+        android:id="@+id/date_select_btn"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2018년"
+        android:textSize="20sp"
+        android:id="@+id/year_text"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8월 21일"
+        android:textSize="30sp"
+        android:id="@+id/date_text"
+        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
+        
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:id="@+id/table_layout"
+            android:stretchColumns="*"
+            >
+            <TableRow>
+                <TextView
+                    android:text="날 짜"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:text="온 도"
+                    android:gravity="center"
+                    android:textSize="15sp"
+
+                    />
+                <TextView
+                    android:text="습 도"
+                    android:gravity="center"
+                    android:textSize="15sp"
+
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="2018-11-12 08:52:27"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:text="27°C"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:text="55%"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    />
+            </TableRow>
+        </TableLayout>
     </ScrollView>
 
 </LinearLayout>
