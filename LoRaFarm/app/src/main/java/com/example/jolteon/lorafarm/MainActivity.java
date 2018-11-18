@@ -1,6 +1,7 @@
 package com.example.jolteon.lorafarm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
@@ -49,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
         buttonSelected.setSelected(true);
 
         setRecentDate();
+
+        findViewById(R.id.calendar_btn).setOnClickListener(
+                new Button.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent=new Intent(getApplicationContext(), Calendar.class);
+                        startActivity(intent);
+                    }
+                }
+        );
+
     }
 
     public void setRecentDate(){
@@ -171,8 +183,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void timeButtonClicked(View v) {
-
-        Button button;
 
         for(int i=0; i<buttonLayout.getChildCount(); i++){
            buttonLayout.getChildAt(i).setSelected(false);

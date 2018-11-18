@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <drawable name="bg">#FFFACD</drawable>
     <drawable name="bg_select">#ffff0000</drawable>
+    <drawable name="backgroundColor">#98FB98</drawable>
 </resources>
