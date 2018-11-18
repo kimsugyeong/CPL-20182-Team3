@@ -216,8 +216,9 @@ var getDataHistory = function (req, res) {
     var paramDay=req.body.day||req.query.day;
 
     console.log('요청 파라미터 : ' + paramYear + ', ' + paramMonth+', '+paramDay);
+    var dateStr=paramYear+"-"+paramMonth+"-"+paramDay;
 
-    /*
+    
      // database 객체 참조
     var pool = req.app.get('database').pool;
 
@@ -232,7 +233,7 @@ var getDataHistory = function (req, res) {
 
         console.log('데이터베이스 연결 스레드 아이디 : ' + conn.threadId);
 
-        sqlStr = "select * from data order by date desc limit 1"
+        sqlStr = "select * from data where date(date)='"+dateStr+"'";
 
         // SQL문 실행
         var exec = conn.query(sqlStr, function (err, rows) {
@@ -259,14 +260,7 @@ var getDataHistory = function (req, res) {
         });
 
     });
-    */
-
-    res.writeHead('200', {
-        'Content-Type': 'application/json;charset=utf8'
-    });
-    res.write("{code:'200', 'message':'데이터를 성공적으로 받음'}");
-    res.end();
-
+    
 }
 
 var getData = function (pool, callback) {
