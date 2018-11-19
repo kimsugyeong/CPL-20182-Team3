@@ -42,7 +42,7 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_dialog_info))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.thermometer))
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(title)
                 .setContentText(message)

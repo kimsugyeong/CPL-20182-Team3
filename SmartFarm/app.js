@@ -59,7 +59,7 @@ app.use(expressSession({
 
 var token = require('./ClientToken');
 
-/*
+
 const SerialPort = require('serialport');
 const Readline = require('parser-readline');
 const sp = new SerialPort('COM3', {
@@ -145,8 +145,8 @@ sp.on('open', function () {
                         to: client_token,
 
                         data: {
-                            title: 'Hello',
-                            content: '되는가보다'
+                            title: '온도 알림',
+                            content: '현재 농장의 온도: '+strArr[1]+'℃'
                         }
 
                     };
@@ -167,7 +167,7 @@ sp.on('open', function () {
 
 });
 
-*/
+
 
 // 라우터 객체 참조
 var router = express.Router();

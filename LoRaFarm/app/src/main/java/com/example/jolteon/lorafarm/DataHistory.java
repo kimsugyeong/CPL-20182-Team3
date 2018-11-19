@@ -54,7 +54,7 @@ public class DataHistory extends AppCompatActivity {
         refreshHistory(mYear, mMonth + 1, mDay);
 
         yearText.setText(Integer.toString(mYear) + "년");
-        dateText.setText(Integer.toString(mMonth + 1) + "월 " + Integer.toString(mDay));
+        dateText.setText(Integer.toString(mMonth + 1) + "월 " + Integer.toString(mDay)+"일");
 
         dateSelectBtn.setOnClickListener(new View.OnClickListener() {
             @Override

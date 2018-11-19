@@ -27,7 +27,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    static String serverIP="121.150.9.182";
+    static String serverIP="220.122.182.72";
     String operation="";
     LinearLayout buttonLayout;
     TextView mostRecent;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                                 int humidity=jObject.getInt("humidity");
 
                                 mostRecent.setText(date);
-                                temp_text.setText(Integer.toString(temperature)+"°C");
+                                temp_text.setText(Integer.toString(temperature)+"℃");
                                 hum_text.setText(Integer.toString(humidity)+"%");
                             }
 
