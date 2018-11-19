@@ -12,6 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         >
 
         <TextView
@@ -57,12 +58,35 @@
         android:orientation="vertical"
         android:background="@drawable/linear_round"
         android:layout_gravity="center"
-        android:backgroundTint="#aaF0FFF0"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:backgroundTint="#bbF5FFFA"
         >
 
+        <com.example.jolteon.lorafarm.GradientTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28˚C"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/temp_text"
+            android:fontFamily="@font/text_me_one"
+            />
 
+        <com.example.jolteon.lorafarm.GradientTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="55 %"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/hum_text"
+            android:fontFamily="@font/text_me_one"
+
+            />
+
+<!--
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +108,7 @@
             android:id="@+id/hum_text"
             android:fontFamily="@font/text_me_one"
             />
-
+!-->
 
 <!--
         <com.example.jolteon.lorafarm.CustomTextView

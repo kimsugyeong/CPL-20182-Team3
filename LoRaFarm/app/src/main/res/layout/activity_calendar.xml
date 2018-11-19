@@ -9,20 +9,15 @@
     android:background="@drawable/background5"
     tools:context=".DataHistory">
 
-    <!--
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:mcv_selectionColor="#00F"
-        app:mcv_showOtherDates="all" />
-!-->
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="날짜 선택"
+        android:textSize="18sp"
         android:id="@+id/date_select_btn"
+        android:fontFamily="@font/kopub_dotum"
+        android:background="@drawable/backgroundColor"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -59,10 +54,7 @@
             android:stretchColumns="*"
             android:background="@drawable/backgroundColor"
             >
-            <TableRow
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                >
+            <TableRow>
                 <TextView
                     android:text="날 짜"
                     android:gravity="center"
@@ -70,7 +62,8 @@
                     android:background="@drawable/bg"
                     android:textColor="#ff000000"
                     android:fontFamily="@font/kopub_dotum"
-
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     />
                 <TextView
                     android:text="온 도"
@@ -79,7 +72,8 @@
                     android:background="@drawable/bg"
                     android:textColor="#ff000000"
                     android:fontFamily="@font/kopub_dotum"
-
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     />
                 <TextView
                     android:text="습 도"
@@ -88,7 +82,8 @@
                     android:background="@drawable/bg"
                     android:textColor="#ff000000"
                     android:fontFamily="@font/kopub_dotum"
-
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     />
             </TableRow>
             <TableRow

@@ -28,7 +28,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    static String serverIP="220.122.182.72";
+    static String serverIP="203.251.76.58";
     String operation="";
     LinearLayout buttonLayout;
     TextView mostRecent;
