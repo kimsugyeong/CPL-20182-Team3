@@ -20,8 +20,8 @@
             android:text="가장 최근에 업데이트된 날짜"
             android:textSize="20sp"
             android:textColor="#ff000000"
-            android:textStyle="bold"
             android:id="@+id/recent_label"
+            android:fontFamily="@font/kopub_dotum"
             />
 
         <TextView
@@ -35,7 +35,9 @@
             android:text="날짜 나오지 않으면 서버 IP 확인"
             android:textColor="#ff000000"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/kopub_dotum"
+
+            />
 
         <ImageButton
             android:layout_width="48dp"
@@ -50,12 +52,41 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/linear_round"
+        android:layout_gravity="center"
+        android:backgroundTint="#aaF0FFF0"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         >
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28˚C"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/temp_text"
+            android:fontFamily="@font/text_me_one"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="55 %"
+            android:textColor="#ffffffff"
+            android:textSize="90sp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/hum_text"
+            android:fontFamily="@font/text_me_one"
+            />
+
+
+<!--
         <com.example.jolteon.lorafarm.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,6 +113,7 @@
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             />
+            !-->
 
     </LinearLayout>
 
@@ -90,10 +122,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
         >
 
         <ImageButton
@@ -124,6 +156,8 @@
                 android:id="@+id/button_t5"
                 android:onClick="timeButtonClicked"
                 android:layout_marginBottom="3dp"
+                android:fontFamily="@font/kopub_dotum"
+
                 />
             <Button
                 android:layout_width="wrap_content"
@@ -136,6 +170,8 @@
                 android:onClick="timeButtonClicked"
                 android:layout_marginBottom="3dp"
 
+                android:fontFamily="@font/kopub_dotum"
+
                 />
             <Button
                 android:layout_width="wrap_content"
@@ -146,6 +182,8 @@
                 android:textSize="20sp"
                 android:id="@+id/button_t15"
                 android:onClick="timeButtonClicked"
+                android:fontFamily="@font/kopub_dotum"
+
                 />
 
         </LinearLayout>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -81,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
                                 int humidity=jObject.getInt("humidity");
 
                                 mostRecent.setText(date);
-                                temp_text.setText(Integer.toString(temperature)+"℃");
-                                hum_text.setText(Integer.toString(humidity)+"%");
+                                temp_text.setText(Integer.toString(temperature)+"˚C");
+                                hum_text.setText(Integer.toString(humidity)+" %");
                             }
 
                         } catch(Exception e){
@@ -180,6 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
         request.setShouldCache(false);
         Volley.newRequestQueue(this).add(request);
+
+        Toast.makeText(this, operation+"초 동안 솔레노이드 밸브가 열립니다.", Toast.LENGTH_SHORT).show();
     }
 
     public void timeButtonClicked(View v) {
@@ -191,53 +194,6 @@ public class MainActivity extends AppCompatActivity {
         v.setSelected(true);
         buttonSelected=(Button) v;
     }
-
-    /*
-
-    public void mOnClick(View v){
-
-
-        StringRequest request=new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>(){
-                    @Override
-                    public void onResponse(String response){
-                        try{
-                            JSONArray jarray=new JSONArray(response);
-
-                            for(int i=0; i<jarray.length(); i++){
-                                JSONObject jObject=jarray.getJSONObject(i);
-                                String date=jObject.getString("date");
-                                int temperature=jObject.getInt("temperature");
-                                int humidity=jObject.getInt("humidity");
-
-                            }
-
-                        } catch(Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                },
-        new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error){
-                error.printStackTrace();
-            }
-        }
-        ){
-            @Override
-            protected Map<String, String> getParams(){
-                Map<String, String> params=new HashMap<>();
-
-                return params;
-            }
-        };
-
-
-        request.setShouldCache(false);
-        Volley.newRequestQueue(this).add(request);
-
-    }
-    */
 
     public static String makeUrl(String str){
         return "http://"+serverIP+":3000/"+str;

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="@drawable/background5"
     tools:context=".DataHistory">
 
     <!--
@@ -30,6 +31,9 @@
         android:text="2018년"
         android:textSize="20sp"
         android:id="@+id/year_text"
+        android:textColor="#ff000000"
+        android:fontFamily="@font/kopub_dotum"
+
         />
 
     <TextView
@@ -38,34 +42,101 @@
         android:text="8월 21일"
         android:textSize="30sp"
         android:id="@+id/date_text"
+        android:textColor="#ff000000"
+        android:fontFamily="@font/kopub_dotum"
+
         />
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        >
         
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/table_layout"
             android:stretchColumns="*"
+            android:background="@drawable/backgroundColor"
             >
-            <TableRow>
+            <TableRow
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                >
                 <TextView
                     android:text="날 짜"
                     android:gravity="center"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
+                    android:background="@drawable/bg"
+                    android:textColor="#ff000000"
+                    android:fontFamily="@font/kopub_dotum"
+
                     />
                 <TextView
                     android:text="온 도"
                     android:gravity="center"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
+                    android:background="@drawable/bg"
+                    android:textColor="#ff000000"
+                    android:fontFamily="@font/kopub_dotum"
 
                     />
                 <TextView
                     android:text="습 도"
                     android:gravity="center"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
+                    android:background="@drawable/bg"
+                    android:textColor="#ff000000"
+                    android:fontFamily="@font/kopub_dotum"
 
+                    />
+            </TableRow>
+            <TableRow
+                android:padding="3dp"
+                >
+                <TextView
+                    android:text="2018-11-10"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#ff000000"
+                    />
+                <TextView
+                    android:text="27"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#ff000000"
+                    />
+                <TextView
+                    android:text="51"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#ff000000"
+                    />
+            </TableRow>
+            <TableRow
+                android:padding="3dp"
+                >
+                <TextView
+                    android:text="2018-11-10"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#ff000000"
+                    />
+                <TextView
+                    android:text="27"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#ff000000"
+                    />
+                <TextView
+                    android:text="51"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#ff000000"
                     />
             </TableRow>
         </TableLayout>

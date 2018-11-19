@@ -1,7 +1,10 @@
 package com.example.jolteon.lorafarm;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -105,21 +108,9 @@ public class DataHistory extends AppCompatActivity {
                                 ));
                                 tr.setGravity(Gravity.CENTER);
 
-                                TextView d_text = new TextView(DataHistory.this);
-                                TextView t_text = new TextView(DataHistory.this);
-                                TextView h_text = new TextView(DataHistory.this);
-
-
-                                d_text.setText(date);
-                                d_text.setGravity(Gravity.CENTER);
-                                t_text.setText(Integer.toString(temperature));
-                                t_text.setGravity(Gravity.CENTER);
-                                h_text.setText(Integer.toString(humidity));
-                                h_text.setGravity(Gravity.CENTER);
-
-                                tr.addView(d_text);
-                                tr.addView(t_text);
-                                tr.addView(h_text);
+                                tr.addView(makeTableRowWithText(date));
+                                tr.addView(makeTableRowWithText(Integer.toString(temperature)));
+                                tr.addView(makeTableRowWithText(Integer.toString(humidity)));
 
                                 tableLayout.addView(tr, new TableLayout.LayoutParams(
                                         TableLayout.LayoutParams.WRAP_CONTENT,
@@ -158,8 +149,14 @@ public class DataHistory extends AppCompatActivity {
 
     private TextView rowTextView;
     public TextView makeTableRowWithText(String str){
+
+        Typeface typeface = ResourcesCompat.getFont(DataHistory.this, R.font.text_me_one);
+        rowTextView=new TextView(DataHistory.this);
         rowTextView.setText(str);
-        rowTextView.setTextSize(15);
+        rowTextView.setTextSize(20);
+        rowTextView.setTextColor(Color.BLACK);
+        rowTextView.setGravity(Gravity.CENTER);
+        rowTextView.setTypeface(typeface);
 
         return rowTextView;
     }
