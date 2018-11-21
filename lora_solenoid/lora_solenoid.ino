@@ -18,7 +18,8 @@ void setup() {
 
   ATSerial.begin(115200);
   pinMode(solenoidPin, OUTPUT);           //Sets the pin as an output
-
+  SNIPE.lora_setRxtout(500);
+  
   while (ATSerial.read() >= 0) {
 
   }
@@ -31,8 +32,6 @@ void loop() {
 
   String str = SNIPE.lora_recv();
   DebugSerial.println(str);
-
-  delay(500);
   
   if (isNumeric(str)) {
     int time = str.toInt();
