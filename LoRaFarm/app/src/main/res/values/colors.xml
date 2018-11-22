@@ -8,4 +8,6 @@
     <drawable name="backgroundColor">#aaF0FFF0</drawable>
     <color name="startColor">#00BFFF</color>
     <color name="endColor">#9ACD32</color>
+    <color name="AlertStartColor">#FF0000</color>
+    <color name="AlertEndColor">#4B0082</color>
 </resources>

@@ -59,11 +59,14 @@ app.use(expressSession({
 
 var token = require('./ClientToken');
 
-
 const SerialPort = require('serialport');
 const Readline = require('parser-readline');
 const sp = new SerialPort('COM3', {
     baudRate: 115200
+}, function(err){
+     if (err) {
+    return console.log('Error: ', err.message);
+  }
 });
 
 const parser = sp.pipe(new Readline({
@@ -132,12 +135,10 @@ sp.on('open', function () {
             });
 
 
-
             var t_tresh = 30;
+            var temp=parseInt(strArr[1]);
 
-            if (parseInt(strArr[1]) >= t_tresh) {
-                console.log('temperature : ' + strArr[1]);
-
+            if (temp >= t_tresh || temp<=0) {
                 var client_token = token.getToken();
                 if (client_token != null) {
                     var fcm = new FCM(serverKey);
@@ -162,6 +163,8 @@ sp.on('open', function () {
                 }
 
             }
+        
+            
         }
     });
 
@@ -172,7 +175,6 @@ sp.on('open', function () {
 // 라우터 객체 참조
 var router = express.Router();
 
-router.route('/index').get(farm.index);
 router.route('/farmdata').get(farm.farmdata);
 router.route('/controlArduino').post(farm.controlArduino);
 router.route('/register').post(farm.register);

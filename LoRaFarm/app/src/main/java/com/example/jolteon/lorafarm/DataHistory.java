@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class DataHistory extends AppCompatActivity {
     TextView yearText;
     TextView dateText;
     TableLayout tableLayout;
+    ScrollView scrollView;
 
     int mYear;
     int mMonth;
@@ -48,6 +50,7 @@ public class DataHistory extends AppCompatActivity {
         dateSelectBtn = (Button) findViewById(R.id.date_select_btn);
         dateText = (TextView) findViewById(R.id.date_text);
         tableLayout = (TableLayout) findViewById(R.id.table_layout);
+        scrollView=(ScrollView) findViewById(R.id.scrollView);
 
         Calendar calendar = Calendar.getInstance();
         mYear = calendar.get(Calendar.YEAR);
@@ -79,7 +82,7 @@ public class DataHistory extends AppCompatActivity {
                 dialog.show();
             }
         });
-    }
+        }
 
     public void refreshHistory(final int year, final int month, final int day) {
 
@@ -160,4 +163,5 @@ public class DataHistory extends AppCompatActivity {
 
         return rowTextView;
     }
+
 }

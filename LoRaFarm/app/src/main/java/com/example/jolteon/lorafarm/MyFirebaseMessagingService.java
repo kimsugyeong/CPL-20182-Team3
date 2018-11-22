@@ -26,7 +26,6 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
         Log.d(this.getClass().getName(), "title : "+data.get("title"));
         Log.d(this.getClass().getName(), "content : "+data.get("content"));
 
-
         String title=data.get("title");
         String message=data.get("content");
 
